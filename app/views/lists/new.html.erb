@@ -1,2 +1,10 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<h1>New Watch List</h1>
+
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Create New List" %>
+<% end %>
+
+<p>
+  <%= link_to "Back to All Lists", lists_path %>
+</p>
