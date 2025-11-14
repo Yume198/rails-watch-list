@@ -1,4 +1,9 @@
-<h1><%= @list.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : image_path('https://ducunl0s4svtl.cloudfront.net/wp-content/uploads/2017/10/flat-clapperboard-icon_1063-38.jpg') %>)">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+
 
 <h2>All My Bookmarks</h2>
 <ul>

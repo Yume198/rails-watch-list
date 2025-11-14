@@ -1,12 +1,21 @@
 <h1>My Watch Lists</h1>
 
-<ul>
+<!-- <ul>
   <% @lists.each do |list| %>
     <li>
-      <%= link_to list.name, list_path(list) %>
+      <%#= link_to list.name, list_path(list) %>
     </li>
   <% end %>
-</ul>
+</ul> -->
+<div class="cards">
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list), class: 'text-white text-decoration-none' do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('https://ducunl0s4svtl.cloudfront.net/wp-content/uploads/2017/10/flat-clapperboard-icon_1063-38.jpg') %>)">
+        <%= list.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
 <p>
   <%= link_to "+ Create New List", new_list_path %>
